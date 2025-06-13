@@ -4,7 +4,7 @@
 }
 
 body{
-  background-image: url("/Login Page Website using HTML and CSS/Images/Backgraound.jpg");
+  background-image: url("Images/Backgraound.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
