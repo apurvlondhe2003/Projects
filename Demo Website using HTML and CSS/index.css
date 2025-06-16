@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "inter";
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.header {
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    gap: 0.625rem;
+}
+
+.logo_img {
+    /* border: 2px solid black; */
+    height: 100%;
+    width: 50px;
+}
+
+.logo_name {
+    /* border: 2px solid black; */
+    color: black;
+    align-items: center;
+}
+
+.navbar {
+    width: 50%;
+    /* border: 2px solid black; */
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    color: gray;
+    font-weight: 800;
+    gap: 1rem;
+}
+@media screen and (min-width:750px) {
+    .navbar{
+        display: flex;
+    }
+}
+
+.navbar a:hover {
+    color: blue;
+}
+
+.navbar a {
+    color: gray;
+    transition: color 0.2s;
+}
+
+.contct {
+    /* border: 2px solid black; */
+    width: 100px;
+    height: 35px;
+    color: white;
+    background-color: rgb(56, 56, 178);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    border: none;
+    transition: all 0.1;
+    display: none;
+}
+@media screen and (min-width:750px) {
+    .contct{
+        display: block;
+    }
+    
+}
+
+.contct:hover {
+    background-color: rgb(23, 23, 211);
+}
+
+.menu_button {
+    display: none;
+    width: 50px;
+    height: 50px;
+    align-content: center;
+    border: none;
+    padding: 10px;
+}
+
+@media screen and (max-width:749px) {
+    .menu_button {
+        display: block;
+    }
+}
+.menu_icon{
+    border: none;
+}
+.menu_img{
+    width: 100%;
+    height: 100%;
+}
