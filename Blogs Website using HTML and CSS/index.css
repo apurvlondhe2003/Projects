@@ -14,7 +14,7 @@ a {
 }
 
 .container {
-    max-width: 85vw;
+    max-width: 90vw;
     padding: 2rem 1rem;
     margin: 0 auto;
 }
@@ -41,10 +41,12 @@ a {
 .cardsContainers {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 270px));
+    justify-content: center;
 }
 
-@media (min-width:700px) {
+/* @media (min-width:700px) {
     .cardsContainers {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -60,7 +62,7 @@ a {
     .cardsContainers {
         grid-template-columns: repeat(4, 1fr);
     }
-}
+} */
 
 .card_container {
     display: flex;
