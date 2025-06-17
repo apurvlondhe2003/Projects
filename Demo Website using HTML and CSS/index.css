@@ -125,6 +125,7 @@ body {
     max-width: 1100px;
     padding: 2rem;
     margin: 1px auto;
+    /* border: 1px solid black; */
 }
 
 .hero_main {
@@ -132,7 +133,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 
@@ -254,6 +254,8 @@ body {
     .right_div {
         height: 100%;
         width: 50%;
+        display: flex;
+        justify-content: end;
     }
 
     .main_discrtiption {
@@ -263,7 +265,134 @@ body {
 
     .main_img {
         height: 400px;
-        width: 400px;
+        width: 80%;
         border-radius: 20px;
     }
+}
+
+.company_logo_box {
+    max-width: 1100px;
+    padding: 2rem;
+    margin: 1px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px 0px;
+    animation: slideFromLeft 1s ease forwards;
+    opacity: 1;
+    border: 1px solid black;
+}
+
+.logo_grid {
+    display: grid;
+    background-color: rgb(204, 199, 199);
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 100px));
+    padding: 0.5rem;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    border-radius: 10px;
+}
+
+.company_logo {
+    padding: 0.5rem;
+    color: rgb(74, 73, 73);
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.svg_img {
+    width: 2rem;
+    border-radius: 50px;
+}
+.advantages_grid_box{
+    background-color: rgb(232, 229, 229);
+}
+.advantages_box {
+    max-width: 1100px;
+    padding: 2rem;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid black;
+}
+
+.advantages_box_heading {
+    font-weight: 700;
+}
+
+.advantages_box_discription {
+    font-size: 0.9rem;
+    width: 60%;
+    color: rgb(74, 73, 73);
+}
+
+.advantages_box_grid {
+    padding: 10px 0px;
+    width: 80%;
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: repeat(3 , 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.grid_box {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #4a90e2;
+}
+
+.grid_logo {
+    width: 25%;
+    height: 25%;
+    margin-top: 10px;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.grid_heading {
+    color: white;
+    padding: 10px 0px 05px 0px;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.grid_discrption {
+    color: white;
+    padding: 05px 0px 10px 0px;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.grid_box:nth-child(2){
+    background-color: #FF6289;
+}
+.grid_box:nth-child(3){
+    background-color: #fcbf58;
+}
+
+.grid_box:nth-child(4){
+    background-color: #44bfc3;
+}
+
+.grid_box:nth-child(5){
+    background-color: #77b05d;
+}
+
+.grid_box:nth-child(6){
+    background-color: #7d78b1;
 }
