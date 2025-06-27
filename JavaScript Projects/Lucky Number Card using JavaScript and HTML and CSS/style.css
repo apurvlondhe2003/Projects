@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+}
+
+.cardContainer {
+    width: 500px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    border-radius: 20px;
+    background: #22C1C3;
+    box-shadow: 5px 5px 55px blue;
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+}
+
+.heading {
+    width: 100%;
+    height: 20%;
+    font-size: 1.65rem;
+    text-align: center;
+}
+
+.heading h1 {
+    background-image: linear-gradient(180deg, #4B0082, #8F00FF, #D400FF, #FF00C8, #FF1493);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.main {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* border: 1px solid black; */
+}
+
+p {
+    color: #D400FF;
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 10px;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+}
+
+.userInput {
+    gap: 1.5rem;
+    width: 70%;
+}
+
+#user_Input {
+    width: 100%;
+    height: 50%;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    background-color: #2ebf91;
+    color: #FF00C8;
+    box-shadow: 5px 5px 5px black;
+}
+
+.buttons {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#reset {
+    width: 30%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200%;
+    color: #FF1493;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    /* display: block; */
+}
+
+#reset:hover {
+    background-position: right center;
+    color: black;
+    text-decoration: none;
+}
+
+#submit {
+    width: 30%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200%;
+    color: #FF1493;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    /* display: block; */
+}
+
+#submit:hover {
+    background-position: right center;
+    color: black;
+    text-decoration: none;
+}
+
+
+.result {
+    overflow: hidden;
+}
+
+.notLuckyNumber {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    display: none;
+}
+
+.luckyNumber {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bolder;
+    display: none;
+    background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+}
+
+.luckyNumber:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
