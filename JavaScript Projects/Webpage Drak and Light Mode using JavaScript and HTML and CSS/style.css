@@ -7,16 +7,6 @@ body{
     transition: all 2s;
 }
 
-.main_containar {
-    /* width: 150px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black; */
-}
-
 .darkButton {
     width: 100px;
     height: 70px;
