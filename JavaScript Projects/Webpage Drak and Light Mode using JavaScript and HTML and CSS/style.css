@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    transition: all 2s;
+}
+
+.main_containar {
+    /* width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black; */
+}
+
+.darkButton {
+    width: 100px;
+    height: 70px;
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px black;
+}
+
+.lightButton {
+    width: 100px;
+    height: 70px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px white;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 900;
+    display: none;
+    padding: 10px;
+}
