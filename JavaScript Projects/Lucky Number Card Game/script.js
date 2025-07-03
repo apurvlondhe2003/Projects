@@ -29,4 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
         luckyNumber.style.display = "none";
         notLuckyNumber.style.display = "none";
     })
+
+    submitButton.addEventListener("click", () => {
+        let enterNumber = parseInt(userEnterNumber.value);
+        if (enterNumber != winningNumber) {
+            setTimeout(() => {
+                userEnterNumber.value = "";
+                notLuckyNumber.style.display = "none";
+            }, 3000);
+        }
+    })
 })

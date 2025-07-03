@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #e0f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Laptop background image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('Images/laptop.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Mobile background image */
+@media (max-width: 768px) {
+    body::before {
+        background: url('Images/mobile.jpg') no-repeat center center/cover;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.80);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+form .amount,
+form .dropdown {
+    margin-bottom: 20px;
+}
+
+.amount p,
+.from p,
+.to p {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.flagImg {
+    display: none;
+}
+
+.amount input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.selectContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.selectContainer img {
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+}
+
+#inputAmmount {
+    text-align: center;
+}
+
+.selectContainer select {
+    padding: 6px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+}
+
+.fa-right-left {
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    margin-top: 25px;
+}
+
+.massage {
+    font-size: 1.5rem;
+    min-height: 30px;
+    font-weight: bold;
+    color: #1c90f6;
+    margin-bottom: 10px;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.711);
+    display: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.getExchange {
+    background-color: #4facfe;
+    color: white;
+}
+
+.getExchange:hover {
+    background-color: #00c2ff;
+}
+
+.resetButton {
+    background-color: #eee;
+    color: #333;
+}
+
+.resetButton:hover {
+    background-color: #ccc;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.70);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .selectContainer {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .fa-right-left {
+        margin: 10px auto;
+    }
+}

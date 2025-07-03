@@ -10,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
     background: linear-gradient(to right, #2ebf91, #8360c3);
@@ -17,7 +18,7 @@ body {
 
 .cardContainer {
     width: 500px;
-    height: 450px;
+    height: 500px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -33,7 +34,8 @@ body {
 .heading {
     width: 100%;
     height: 20%;
-    font-size: 1.65rem;
+    padding-top: 10px;
+    font-size: 1.50rem;
     text-align: center;
 }
 
@@ -51,7 +53,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     /* border: 1px solid black; */
 }
 
@@ -65,18 +67,19 @@ p {
 }
 
 .userInput {
-    gap: 1.5rem;
-    width: 70%;
+    gap:2rem;
+    width: 90%;
 }
 
 #user_Input {
     width: 100%;
     height: 50%;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 700;
     padding: 10px;
     border-radius: 20px;
     border: none;
+    text-align: center;
     text-align: center;
     background-color: #2ebf91;
     color: #FF00C8;
@@ -84,14 +87,14 @@ p {
 }
 
 .buttons {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
 #reset {
-    width: 30%;
+    width: 40%;
     height: 100%;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -111,7 +114,7 @@ p {
 }
 
 #submit {
-    width: 30%;
+    width: 40%;
     height: 100%;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -131,10 +134,6 @@ p {
     text-decoration: none;
 }
 
-
-.result {
-    overflow: hidden;
-}
 
 .notLuckyNumber {
     width: 100%;
