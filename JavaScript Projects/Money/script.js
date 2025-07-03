@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         defaultOption.selected = true;
         defaultOption.disabled = true;
-        // defaultOption.hidden = true;
         select.append(defaultOption);
 
         for (let currCode in countryList) {
@@ -54,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (fromCurr.value === "FROM" || toCurr.value === "TO") {
             massage.style.display = "block";
+            massage.style.color = "red";
             massage.innerText = "Please select both currencies.";
             return;
         }
@@ -63,12 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const URL = `${BASE_URl}/${fromCurr.value.toLowerCase()}.json`;
         try {
+            massage.style.display= "block";
+            massage.style.color = "#1c90f6";
             massage.innerText = "Fetching rate...";
             let response = await fetch(URL);
             let data = await response.json();
             let rate = await data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
             let finalAmount = inputAmount.value * rate;
-            massage.style.display= "block";
             massage.innerText = `${inputAmount.value} ${fromCurr.value} = ${finalAmount.toFixed(2)} ${toCurr.value}`;
         }
         catch (error) {
