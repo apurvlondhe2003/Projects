@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateFlag = (element) => {
         let currCode = element.value;
         let countryCode = countryList[currCode];
-        let newSrc = `https://flagsapi.com/${countryCode}/shiny/64.png`;
+        const info = countryList[currCode];
         let img = element.parentElement.querySelector("img");
         if (countryCode && countryCode !== "FROM" && countryCode !== "TO") {
+            let newSrc = `https://flagsapi.com/${info.countryCode}/shiny/64.png`;
             img.src = newSrc;
             img.style.display = "inline-block";
         }
@@ -35,10 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
         defaultOption.disabled = true;
         select.append(defaultOption);
 
-        for (let currCode in countryList) {
+        for (let currCode of Object.keys(countryList)) {
             if (currCode === "FROM" || currCode === "TO") continue;
+            const info = countryList[currCode];
             let newOption = document.createElement("option");
-            newOption.innerText = currCode;
+            newOption.innerText = info && info.countryName ? `${info.countryName}` : currCode;
             newOption.value = currCode;
             select.append(newOption);
         }
@@ -63,14 +65,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const URL = `${BASE_URl}/${fromCurr.value.toLowerCase()}.json`;
         try {
-            massage.style.display= "block";
+            massage.style.display = "block";
             massage.style.color = "#1c90f6";
             massage.innerText = "Fetching rate...";
             let response = await fetch(URL);
             let data = await response.json();
             let rate = await data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
             let finalAmount = inputAmount.value * rate;
-            massage.innerText = `${inputAmount.value} ${fromCurr.value} = ${finalAmount.toFixed(2)} ${toCurr.value}`;
+            const fromInfo = countryList[fromCurr.value];
+            const toInfo = countryList[toCurr.value];
+            massage.innerText = `${inputAmount.value} ${fromInfo?.countryName || ""} (${fromCurr.value}) \nTO\n  ${finalAmount.toFixed(2)} ${toInfo?.countryName || ""} (${toCurr.value})`;
+            // massage.innerText = `${inputAmount.value} ${fromCurr.value} ${finalAmount.toFixed(2)} ${toCurr.value}`;
         }
         catch (error) {
             massage.innerText = "Something went wrong. Please try again.";
@@ -81,15 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
     getExchange.addEventListener("click", exchangeResult);
 
     resetButton.addEventListener("click", function () {
-            inputAmount.value = "";
-            massage.innerText = "";
-            fromCurr.value = "FROM";
-            toCurr.value = "TO";
-            massage.style.display= "none";
-            updateFlag(fromCurr);
-            updateFlag(toCurr);
-            document.querySelectorAll(".flagImg").forEach(img => {
-                img.style.display = "none";
-            });
-        })
+        inputAmount.value = "";
+        massage.innerText = "";
+        fromCurr.value = "FROM";
+        toCurr.value = "TO";
+        massage.style.display = "none";
+        updateFlag(fromCurr);
+        updateFlag(toCurr);
+        document.querySelectorAll(".flagImg").forEach(img => {
+            img.style.display = "none";
+        });
+    })
 })
