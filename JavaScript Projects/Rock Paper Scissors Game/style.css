@@ -1,0 +1,136 @@
+/* Default Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#bgimg {
+    width: 100%;
+    height: 40%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+    color: #333;
+}
+
+/* Choice Section */
+.choiseContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.choice img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: transform 0.3s;
+}
+
+.choice img:hover {
+    transform: scale(1.2);
+}
+
+/* Score Section */
+.scorreContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.score {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+#userScore,
+#computerScore {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Message */
+.massageContainer {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #222;
+    font-weight: 700;
+    background-color: #ffffff00;
+}
+
+#massage {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+/* Responsive Background */
+@media (min-width: 770px) {
+    #bgimg {
+        display: none;
+    }
+
+    body {
+        background-image: url(Images/Laptop_Background_Image.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+    }
+}
+
+@media (max-width: 769px) {
+    #bgimg {
+        display: block;
+    }
+
+    .choice img {
+        width: 80%;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .score {
+        font-size: 1.2rem;
+    }
+
+    #userScore,
+    #computerScore {
+        font-size: 1.5rem;
+    }
+
+    .massageContainer {
+        font-size: 1.2rem;
+        font-weight: 630;
+    }
+}

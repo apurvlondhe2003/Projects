@@ -11,9 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(hideBox);
     console.log(winBox);
 
+    const player1 = () => {
+        player1Name = prompt("Enter Player 1 Name: ");
+    }
+    const player2 = () => {
+        player2Name = prompt("Enter Player 2 Name: ");
+    }
     // newGame.style.display = "none";
     winBox.style.display = "none";
     let player_X = true;
+    player1();
+    player2();
 
     const winngPatterns = [
         [0, 1, 2],
@@ -30,8 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
         player_X = true;
         enableBoxes();
         winBox.style.display = "none";
-        gamebox.style.display = "flex";
+        gamebox.style.display = "grid";
         hideBox.style.display = "block";
+        // player1();
+        // player2();
     };
 
     resetGame.forEach((btn) => btn.addEventListener("click", resetGameAll))
@@ -68,7 +78,29 @@ document.addEventListener("DOMContentLoaded", function () {
         gamebox.style.display = "none";
         hideBox.style.display = "none";
         newGame.style.display = "flex";
-        winMassages.innerText = (winner === "Tie") ? "It's a\n Tie !!" : `!! Winner !!\n!! ${winner} !!`;
+        if (winner === "X") {
+            if (player1Name == "") {
+                winMassages.innerText = `!! Winner !!\n!! PLAYER 1 !!\n!! ${winner} !!`;
+            }
+            else {
+                winner = player1Name.toUpperCase();
+                winMassages.innerText = `!! Winner !!\n!! PLAYER 1 !!\n!! ${winner} !!`;
+            }
+        }
+        else if (winner === "O") {
+            if (player2Name == "") {
+                winMassages.innerText = `!! Winner !!\n!! PLAYER 2 !!\n!! ${winner} !!`;
+            }
+            else {
+                winner = player2Name.toUpperCase();
+                winMassages.innerText = `!! Winner !!\n!! PLAYER 2 !!\n!! ${winner} !!`;
+            }
+        }
+        else if (winner === "Tie") {
+            winMassages.innerText = `It's a\n TIE !!`;
+        };
+
+        // winMassages.innerText = (winner === "Tie") ? "It's a\n Tie !!" : `!! Winner !!\n!! ${winner} !!`;
         disableBoxes();
     };
 

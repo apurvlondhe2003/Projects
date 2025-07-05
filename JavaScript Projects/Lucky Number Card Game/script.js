@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let luckyNumber = document.querySelector(".luckyNumber");
 
 
-    let winningNumber = 1404;
+    let winningNumber = "1404";
 
     submitButton.addEventListener("click", function () {
-        let enterNumber = parseInt(userEnterNumber.value);
+        let enterNumber = userEnterNumber.value;
 
         if (/^\d{4}$/.test(enterNumber)) {
             if (enterNumber === winningNumber) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     submitButton.addEventListener("click", () => {
-        let enterNumber = parseInt(userEnterNumber.value);
+        let enterNumber = userEnterNumber.value;
         if (enterNumber != winningNumber) {
             setTimeout(() => {
                 userEnterNumber.value = "";

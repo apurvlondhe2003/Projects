@@ -1,167 +1,152 @@
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Laptop background image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
-    background: linear-gradient(to right, #2ebf91, #8360c3);
+    background: url('Images/laptop_Background_Image.jpg') no-repeat center center/cover;
+    z-index: -1;
 }
 
+/* Mobile background image */
+@media (max-width: 768px) {
+    body::before {
+        background: url('Images/Mobile_Background_Image.jpg') no-repeat center center/cover;
+    }
+}
+
+/* Card Container */
 .cardContainer {
-    width: 500px;
-    height: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 20px;
-    border-radius: 20px;
-    background: #22C1C3;
-    box-shadow: 5px 5px 55px blue;
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
-}
-
-.heading {
-    width: 100%;
-    height: 20%;
-    padding-top: 10px;
-    font-size: 1.50rem;
-    text-align: center;
-}
-
-.heading h1 {
-    background-image: linear-gradient(180deg, #4B0082, #8F00FF, #D400FF, #FF00C8, #FF1493);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-}
-
-.main {
-    width: 100%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    /* border: 1px solid black; */
-}
-
-p {
-    color: #D400FF;
-    font-size: 1.7rem;
-    font-weight: 600;
-    padding: 10px;
-    text-shadow: 2px 2px 2px black;
-    text-align: center;
-}
-
-.userInput {
-    gap:2rem;
+    background: #ffffffa7;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
     width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading */
+.heading h1 {
+    font-size: 2rem;
+    color: #000000;
+    background-color: #ffffffde;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+}
+
+/* Input Area */
+.userInput {
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+.userInput p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #444;
 }
 
 #user_Input {
     width: 100%;
-    height: 50%;
-    font-size: 1.6rem;
-    font-weight: 700;
     padding: 10px;
-    border-radius: 20px;
-    border: none;
+    font-size: 1rem;
+    border: 2px solid #0077ff;
+    border-radius: 6px;
+    outline: none;
     text-align: center;
-    text-align: center;
-    background-color: #2ebf91;
-    color: #FF00C8;
-    box-shadow: 5px 5px 5px black;
+    transition: 0.3s;
 }
 
+#user_Input:focus {
+    border-color: #004ec2;
+}
+
+/* Buttons */
 .buttons {
-    width: 80%;
+    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-#reset {
-    width: 40%;
-    height: 100%;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200%;
-    color: #FF1493;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 5px;
+button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#reset:hover {
-    background-position: right center;
-    color: black;
-    text-decoration: none;
+button:hover {
+    background-color: #005dc0;
 }
 
-#submit {
-    width: 40%;
-    height: 100%;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200%;
-    color: #FF1493;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 5px;
+/* Result Messages */
+.result {
+    margin-top: 30px;
 }
 
-#submit:hover {
-    background-position: right center;
-    color: black;
-    text-decoration: none;
-}
-
-
+.luckyNumber,
 .notLuckyNumber {
-    width: 100%;
-    height: 100%;
-    font-size: 1.5rem;
-    text-align: center;
     display: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.4;
 }
 
 .luckyNumber {
-    width: 100%;
-    height: 100%;
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bolder;
-    display: none;
-    background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
 }
 
-.luckyNumber:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
+.notLuckyNumber {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .userInput p {
+        font-size: 1rem;
+    }
+
+    .luckyNumber,
+    .notLuckyNumber {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
 }

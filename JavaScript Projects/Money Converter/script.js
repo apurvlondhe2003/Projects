@@ -60,26 +60,35 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+
         if (inputAmount.value === "" || inputAmount.value < 1) {
             inputAmount.value = "1";
         }
-        const URL = `${BASE_URl}/${fromCurr.value.toLowerCase()}.json`;
-        try {
+        if (inputAmount.value > 10000) {
             massage.style.display = "block";
-            massage.style.color = "#1c90f6";
-            massage.innerText = "Fetching rate...";
-            let response = await fetch(URL);
-            let data = await response.json();
-            let rate = await data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
-            let finalAmount = inputAmount.value * rate;
-            const fromInfo = countryList[fromCurr.value];
-            const toInfo = countryList[toCurr.value];
-            massage.innerText = `${inputAmount.value} ${fromInfo?.countryName || ""} (${fromCurr.value}) \nTO\n  ${finalAmount.toFixed(2)} ${toInfo?.countryName || ""} (${toCurr.value})`;
-            // massage.innerText = `${inputAmount.value} ${fromCurr.value} ${finalAmount.toFixed(2)} ${toCurr.value}`;
+            massage.style.color = "red";
+            massage.innerText ="Enter Amount Between\n 1 TO 10000";
         }
-        catch (error) {
-            massage.innerText = "Something went wrong. Please try again.";
+        else {
+            const URL = `${BASE_URl}/${fromCurr.value.toLowerCase()}.json`;
+            try {
+                massage.style.display = "block";
+                massage.style.color = "#1c90f6";
+                massage.innerText = "Fetching rate...";
+                let response = await fetch(URL);
+                let data = await response.json();
+                let rate = await data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
+                let finalAmount = inputAmount.value * rate;
+                const fromInfo = countryList[fromCurr.value];
+                const toInfo = countryList[toCurr.value];
+                massage.innerText = `${inputAmount.value} ${fromInfo?.countryName || ""} (${fromCurr.value}) \nTO\n  ${finalAmount.toFixed(2)} ${toInfo?.countryName || ""} (${toCurr.value})`;
+                // massage.innerText = `${inputAmount.value} ${fromCurr.value} ${finalAmount.toFixed(2)} ${toCurr.value}`;
+            }
+            catch (error) {
+                massage.innerText = "Something went wrong. Please try again.";
+            }
         }
+
     }
 
     submitImg.addEventListener("click", exchangeResult);
