@@ -1,0 +1,140 @@
+/** @format */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	color: #fff;
+	font-size: 62.5%;
+}
+body {
+	font-family: "Urbanist", sans-serif;
+	background-color: #1b1b1d;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-top: 4.8rem;
+}
+
+.mainBody {
+	display: grid;
+	/* 10 columns of fixed element width to get groups of 10 per row on wide screens */
+	/* grid-template-columns: repeat(12rem); */
+grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+    justify-items: center;
+	padding: 1.5rem;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+/* Responsive: reduce columns on smaller screens */
+/* @media (max-width: 1200px) {
+	.mainBody {
+		grid-template-columns: repeat(8, 8rem);
+	}
+}
+@media (max-width: 1000px) {
+	.mainBody {
+		grid-template-columns: repeat(6, 8rem);
+	}
+}
+@media (max-width: 700px) {
+	.mainBody {
+		grid-template-columns: repeat(4, 8rem);
+	}
+}
+@media (max-width: 420px) {
+	.mainBody {
+		grid-template-columns: repeat(2, 8rem);
+	}
+} */
+
+/* Element card */
+.element {
+	width: 10rem;
+	aspect-ratio: 1;
+	padding: 0.4rem;
+	margin: 0; /* spacing handled by grid gap */
+	border: 1px solid #d6417a;
+	border-radius:1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 4rem;
+	font-weight: 600;
+	position: relative;
+	/* background: #fff; */
+    color: #d6417a;
+	transition: transform 160ms ease, background-color 160ms ease,
+		color 160ms ease;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+		rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+	-webkit-user-select: none;
+	user-select: none;
+	text-align: center;
+}
+
+/* small lift on hover / focus */
+.element:hover,
+.element:focus {
+	transform: translateY(-4px);
+	background-color: #d6417a;
+	color: #ffffff;
+	outline: none;
+}
+
+/* show atomic number at top (uses data-atomic-number attribute) */
+.element::before {
+	content: attr(data-atomic-number);
+	position: absolute;
+	top: 0.4rem;
+	left: 0.6rem;
+	font-size: 1.3rem;
+	opacity: 0.85;
+	color: inherit;
+}
+
+/* show element name as small label at bottom (uses data-element-name attribute) */
+.element::after {
+	content: attr(data-element-name);
+	position: absolute;
+	bottom: 0.45rem;
+	left: 0.5rem;
+	right: 0.5rem;
+	font-size:1.4rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 0.9;
+	color: inherit;
+	pointer-events: none;
+}
+
+/* make keyboard accessible (show focus ring) */
+.element:focus-visible {
+	box-shadow: 0 0 0 3px rgba(214, 65, 122, 0.18);
+}
+
+/* Heading spacing (keeps your existing style) */
+h1 {
+	text-align: center;
+	margin-bottom: 2.4rem;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial;
+}
+
+/* Optional: small container for total count if you want to show it later */
+.total-count {
+	text-align: center;
+	margin-top: 1rem;
+	font-size: 0.95rem;
+	color: #333;
+}
