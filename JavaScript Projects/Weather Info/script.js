@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	//* define the getWeather function here
 
 	const getWeatherData = async () => {
-		const weatherUrl = `httpss://api.openweathermap.org/data/2.5/weather?q=${getCity()}&APPID=d7ec3135875b5debe3d2628a90742f65`;
+		const weatherUrl = `httpss://api.openweathermap.org/data/2.5/weather?q=${getCity()}&APPID=YourAPIKey`;
 		try {
 			const res = await fetch(weatherUrl);
 			const weatherData = await res.json();
