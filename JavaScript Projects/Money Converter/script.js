@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const massage = document.querySelector(".massage");
     const resetButton = document.querySelector(".resetButton");
     const submitImg = document.querySelector("#submitImg");
-
+countryList
     const updateFlag = (element) => {
         let currCode = element.value;
         let countryCode = countryList[currCode];

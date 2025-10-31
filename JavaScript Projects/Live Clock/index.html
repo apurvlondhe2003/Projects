@@ -1,0 +1,66 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+			integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<title>Live Clock</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="clockHolder">
+				<div class="timeHolder">
+					<div class="timeOptions">
+						<i
+							class="fas fa-clock"
+							data-title="Time"></i>
+						<i
+							class="fas fa-stopwatch"
+							data-title="StopWatch"></i>
+						<i
+							class="far fa-clock"
+							data-title="CountDown"></i>
+					</div>
+					<div class="mainDiv">
+						<p id="clock"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let clock = document.getElementById("clock");
+
+				let liveTime = () => {
+					const updateTime = new Date().toLocaleTimeString(
+						"en-US",
+						{
+							hour12: true,
+						}
+					);
+					clock.innerText = `${updateTime}`;
+				};
+
+				liveTime();
+
+				const stopInterval = setInterval(liveTime, 1000);
+
+				// Stop Interval Time
+				// 	setInterval(() => {clearInterval(stopInterval)}, 5000);
+			});
+		</script>
+	</body>
+</html>
